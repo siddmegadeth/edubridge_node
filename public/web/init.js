@@ -60,13 +60,16 @@ app.config(['$locationProvider', '$httpProvider', '$routeProvider', '$translateP
 
     var apiURI = {
         authentication: {
-            generateTokenFromEmail : productionLink + '/get/generate/token/from/email',
-            createProfile : productionLink + '/post/create/profile',
+            generateTokenFromEmail: productionLink + '/get/generate/token/from/email',
+            createProfile: productionLink + '/post/create/profile',
             verifyAccessToken: productionLink + '/get/verify/access/token',
             updateMobileNumber: productionLink + "/get/auth/validate/otp/update/mobile"
         },
         profile: {
             createProfile: productionLink + '/post/create/profile'
+        },
+        stateManager: {
+            verifyAccessToken: productionLink + '/get/verify/access/token'
         }
     };
     log(apiURI.authentication);
@@ -75,41 +78,19 @@ app.config(['$locationProvider', '$httpProvider', '$routeProvider', '$translateP
     profileProvider.config(apiURI.profile);
 
     $routeProvider
-        .when('/landing', {
-            templateUrl: 'components/landing/landing.html',
-            controller: 'landingCtrl',
-            params: {
-                loginRequired: false,
-                clearCache: false,
-                showNavBar: true,
-                showFooter: true,
-                disableLink: false
-            }
-        })
         .when('/home', {
             templateUrl: 'components/home/home.html',
             controller: 'homeCtrl',
             params: {
-                loginRequired: false,
+                loginRequired: true,
                 clearCache: false,
                 showNavBar: true,
                 showFooter: true,
                 disableLink: false
             }
         })
-        .when('/marketplace', {
-            templateUrl: 'components/marketplace/marketplace.html',
-            controller: 'marketPlaceCtrl',
-            params: {
-                loginRequired: false,
-                clearCache: false,
-                showNavBar: true,
-                showFooter: true,
-                disableLink: false
 
-            }
-        })
-        .when('/profile/complete', {
+    .when('/profile/complete', {
             templateUrl: 'components/complete-profile/complete-profile.html',
             controller: 'completeProfileCtrl',
             params: {
@@ -167,7 +148,9 @@ app.config(['$locationProvider', '$httpProvider', '$routeProvider', '$translateP
                 disableLink: true
             }
         })
-        .otherwise({ redirectTo: 'landing' });
+        .otherwise({
+            redirectTo: 'landing'
+        });
 
 
 

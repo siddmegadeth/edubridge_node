@@ -3,7 +3,7 @@
     <!-- Container wrapper -->
     <div class="container">
         <!-- Navbar brand -->
-        <a class="navbar-brand mb-0 h1" href="#/landing">
+        <a class="navbar-brand mb-0 h1">
             {{'TITLE'|translate}}
         </a>
         <!-- Toggle button -->
@@ -17,13 +17,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#/home" ng-class="{ active: isActive('/home')}" ng-if="!globalSettings.hideCredentialsLink" ng-show="!globalSettings.disableLink">{{'NAVIGATION.HOME'|translate}}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#/marketplace" ng-class="{ active: isActive('/marketplace')}" ng-if="!globalSettings.hideCredentialsLink" ng-show="!globalSettings.disableLink">{{'NAVIGATION.MARKET_PLACE'|translate}}</a>
-                </li>
             </ul>
             <!-- Left links -->
             <div class="d-flex align-items-center">
-
                 <a class="btn btn-primary px-3 me-2" href="#/login" ng-class="{ active: isActive('/login')}" ng-if="globalSettings.hideCredentialsLink">
                     {{'NAVIGATION.SIGN_IN'|translate}}
                 </a>

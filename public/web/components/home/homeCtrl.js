@@ -1,6 +1,6 @@
-app.controller('homeCtrl', ['$scope', '$rootScope','$timeout', function($scope, $rootScope,$timeout) {
-    $timeout(function() {
+app.controller('homeCtrl', ['$scope', '$rootScope', '$location', function($scope, $rootScope, $location) {
 
-    });
+   
+
 
 }])

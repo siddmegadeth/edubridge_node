@@ -3,7 +3,6 @@ app.controller('loginCtrl', ['$scope', '$rootScope', '$timeout', 'authentication
 
     $timeout(function() {
         isLoggedIn = stateManager.isUserLogggedIn();
-
         if (isLoggedIn) {
             //$location.path('/login');
             $window.history.back();
@@ -11,8 +10,6 @@ app.controller('loginCtrl', ['$scope', '$rootScope', '$timeout', 'authentication
             //$scope.initPhone();
 
         }
-
-        //$rootScope.$broadcast("loader_show");
 
     });
 

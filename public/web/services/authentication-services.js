@@ -14,6 +14,12 @@ app.provider('authentication', [function() {
         $get: ['$http', function($http) {
 
             return {
+                verifyAccessToken :  function() {
+                    return $http({
+                        method: 'GET',
+                        url: authenticationURL.verifyAccessToken,
+                    })
+                },
                 createProfile: function(profile) {
                     return $http({
                         method: 'POST',

@@ -3,7 +3,7 @@ app.controller('globalCtrl', ['$scope', '$rootScope', '$location', '$timeout', '
 
     $timeout(function() {
        
-
+        $location.path('/verify');
     })
 
     $scope.isActive = function(loc) {
@@ -14,7 +14,7 @@ app.controller('globalCtrl', ['$scope', '$rootScope', '$location', '$timeout', '
 
         stateManager.clearLocalStorage();
         $route.reload();
-        $location.path('/landing');
+        $location.path('/login');
     };
 
 }])

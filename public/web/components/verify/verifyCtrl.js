@@ -26,7 +26,7 @@ app.controller('verifyCtrl', ['$scope', '$rootScope', '$location', 'stateManager
                     toastr.error('Login Expired', 'Your Access Token Has Expired');
                     stateManager.clearLocalStorage();
                     $route.reload();
-                    $location.path('/landing');
+                    $location.path('/login');
                 }
             });
 
