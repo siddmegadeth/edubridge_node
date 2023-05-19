@@ -33,11 +33,7 @@
     app.use(cookieParser());
 
     // parse application/x-www-form-urlencoded
-    app.use(bodyParser.urlencoded({
-        parameterLimit: 100000,
-        limit: '50mb',
-        extended: true
-    }))
+
 
     //app.use(bodyParser({ limit: '50mb' }));
     app.use(bodyParser.urlencoded({
