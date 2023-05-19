@@ -30,7 +30,7 @@
     },
     "LOGIN_PAGE":
     {
-        "LOGIN_MESSAGE": "Login/Sign-up using Mobile Number",
+        "LOGIN_MESSAGE": "Login/Sign-up using Email",
         "OTP_MODAL":
         {
             "VALIDATE_OTP_HEADER": "Validate OTP And Sign In",

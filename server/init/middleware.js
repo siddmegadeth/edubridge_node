@@ -44,7 +44,7 @@
     app.set(process.env.PORT);
     app.set('host', process.env.NODE_IP || 'localhost');
     app.use(gzippo.staticGzip("public/web"));
-    app.use('/home', gzippo.staticGzip("public/web"));
+    app.use('/', gzippo.staticGzip("public/web"));
 
     app.use(gzippo.compress());
 
