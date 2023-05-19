@@ -1,0 +1,42 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" ng-if="globalSettings.showNavBar">
+    <!-- Container wrapper -->
+    <div class="container">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mb-0 h1" href="#/landing">
+            {{'TITLE'|translate}}
+        </a>
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarButtonsExample">
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#/home" ng-class="{ active: isActive('/home')}" ng-if="!globalSettings.hideCredentialsLink" ng-show="!globalSettings.disableLink">{{'NAVIGATION.HOME'|translate}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/marketplace" ng-class="{ active: isActive('/marketplace')}" ng-if="!globalSettings.hideCredentialsLink" ng-show="!globalSettings.disableLink">{{'NAVIGATION.MARKET_PLACE'|translate}}</a>
+                </li>
+            </ul>
+            <!-- Left links -->
+            <div class="d-flex align-items-center">
+
+                <a class="btn btn-primary px-3 me-2" href="#/login" ng-class="{ active: isActive('/login')}" ng-if="globalSettings.hideCredentialsLink">
+                    {{'NAVIGATION.SIGN_IN'|translate}}
+                </a>
+                <a href="#/logout" class="btn btn-link  me-3" ng-if="!globalSettings.hideCredentialsLink" ng-click="logout()">
+                    {{'NAVIGATION.LOGOUT'|translate}}
+                </a>
+            </div>
+        </div>
+        <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+</nav>
+<!-- Progress Bar -->
+<div class="progress">
+    <div ng-if="NavProgress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+</div>

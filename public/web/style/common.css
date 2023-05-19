@@ -1,0 +1,17 @@
+.carousel-fixed-height {
+    height: 100%;
+    background-color: #342e2e;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    object-fit: cover;
+}
+
+.carousel-holder {
+    height: 720px;
+
+}
+
+.container-height {
+    height: 890px;
+}
+

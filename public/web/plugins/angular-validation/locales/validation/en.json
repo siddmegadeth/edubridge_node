@@ -1,0 +1,39 @@
+{
+    "INVALID_REQUIRED": "",
+    "INVALID_NUMERIC": "Only Numbers Are Supported",
+    "INVALID_MIN_CHAR": " Minimum Character Required.",
+    "INVALID_MAX_CHAR": " Exceed Character Limit.",
+    "INVALID_BETWEEN_NUM": "Number Must Be Between 1 to 100.",
+    "VALID_EXACT_LEN": "OTP Is 6 Digit.",
+    "INVALID_EXACT_LEN": "Invalid.",
+    "VALID_DIGITS": "Only Digits Between 0 to 9.",
+    "INVALID_DIGITS": "Only Digits Between 0 to 9.",
+    "TITLE": "Edubridge",
+    "CLOSE": "Close",
+    "UTILITIES": {
+        "LOADING_MESSAGE": "Loading"
+    },
+    "NAVIGATION": {
+        "HOME": "Home",
+        "LOGIN": "Login",
+        "SEARCH": "Search",
+        "LOGOUT": "Logout",
+        "SIGN_IN": "Sign In",
+        "MARKET_PLACE": "MarketPlace"
+    },
+    "LOGOUT_PAGE": {
+        "LOGOUT_MESSAGE": "You Had Been Logged Out"
+    },
+    "LOGIN_PAGE": {
+        "LOGIN_MESSAGE": "Login/Sign-up using Mobile Number",
+        "OTP_MODAL": {
+            "VALIDATE_OTP_HEADER": "Validate OTP And Sign In",
+            "OTP_MESSAGE": "Input 6 Digit OTP To Continue. Please check SMS and WA for OTP",
+            "OTP_BUTTON": "Validate"
+        }
+    },
+    "FOOTER_PAGE": {
+        "AUTHOR": "Siddharth Chandra",
+        "COPYRIGHT": "© 2023 Copyright:"
+    }
+}

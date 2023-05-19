@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    <script>
+    window.ga = function() { ga.q.push(arguments) };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview')
+    </script>
+    <!--  -->
+    <script src="plugins/jquery-3.2.1.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <script src="plugins/winDevice.js"></script>
+    <script src="plugins/intl-tel-input-master/build/js/intlTelInput.min.js"></script>
+    <script src="plugins/intl-tel-input-master/build/js/utils.js"></script>
+    <link rel="stylesheet" href="plugins/intl-tel-input-master/build/css/intlTelInput.min.css">
+    <title>{{'TITLE'|translate}}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Place favicon.ico in the root directory -->
+    <script src="plugins/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap-theme.min.css">
+    <!-- toastr -->
+    <link href="plugins/angular-toastr/angular-toastr.min.css" rel="stylesheet" />
+    <!--  -->
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
+    <!--  Core-->
+    <link rel="stylesheet" href="style/core.css">
+    <link rel="stylesheet" href="style/media-queries.css">
+    <link rel="stylesheet" href="style/intl-input.css">
+    <!-- Components CSS -->
+    <!-- Common/Utilities CSS -->
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/utilities.css">
+    <link rel="stylesheet" href="style/overwrite.css">
+</head>
+
+<body ng-controller="globalCtrl">
+    <div ng-include="'components/navbar/navbar.html'"></div>
+    <!-- universal loader controlled by interceptors -->
+    <screen-loader></screen-loader>
+    <!--  -->
+    <div ng-view></div>
+    <!--  -->
+    <div ng-include="'components/footer/footer.html'"></div>
+</body>
+<script src="plugins/angular-1.8.2/angular.min.js"></script>
+<script src="plugins/angular-1.8.2/angular-route.min.js"></script>
+<script src="plugins/angular-1.8.2/angular-animate.min.js"></script>
+<script src="plugins/angular-1.8.2/angular-aria.min.js"></script>
+<script src="plugins/angular-1.8.2/angular-messages.min.js"></script>
+<script src="plugins/angular-1.8.2/angular-sanitize.min.js"></script>
+<script src="plugins/angular-1.8.2/angular-touch.min.js"></script>
+<script src="plugins/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="plugins/angular-toastr/angular-toastr.min.js"></script>
+<!-- 3rd party -->
+<script src="plugins/angular-translate/angular-translate.min.js"></script>
+<script src="plugins/angular-translate/angular-translate-loader.min.js"></script>
+<script src="plugins/angular-validation/dist/angular-validation.min.js"></script>
+<!-- App Init -->
+<script src="init.js"></script>
+<!-- Controllers -->
+<script src="components/global/globalCtrl.js"></script>
+<script src="components/home/homeCtrl.js"></script>
+<script src="components/login/loginCtrl.js"></script>
+<script src="components/landing/landingCtrl.js"></script>
+<script src="components/verify/verifyCtrl.js"></script>
+<script src="components/logout/logoutCtrl.js"></script>
+<script src="components/complete-profile/completeProfileCtrl.js"></script>
+
+<!-- Services -->
+<script src="services/production-services.js"></script>
+<script src="services/interceptor-services.js"></script>
+<script src="services/state-manager-services.js"></script>
+<script src="services/authentication-services.js"></script>
+<script src="services/loading-services.js"></script>
+<script src="services/profile-services.js"></script>
+<!-- Directives -->
+<script src="directive/universal-loader.js"></script>
+<!-- Others -->
+<script>
+window.addEventListener('DOMContentLoaded', event => {
+    // Navbar shrink function
+    var navbarShrink = function() {
+        const navbarCollapsible = document.body.querySelector('#mainNav');
+        if (!navbarCollapsible) {
+            return;
+        }
+        if (window.scrollY === 0) {
+            navbarCollapsible.classList.remove('navbar-shrink')
+        } else {
+            navbarCollapsible.classList.add('navbar-shrink')
+        }
+
+    };
+    // Shrink the navbar 
+    navbarShrink();
+    // Shrink the navbar when page is scrolled
+    document.addEventListener('scroll', navbarShrink);
+    // Activate Bootstrap scrollspy on the main nav element
+    const mainNav = document.body.querySelector('#mainNav');
+    if (mainNav) {
+        new bootstrap.ScrollSpy(document.body, {
+            target: '#mainNav',
+            offset: 72,
+        });
+    };
+    // Collapse responsive navbar when toggler is visible
+    const navbarToggler = document.body.querySelector('.navbar-toggler');
+    const responsiveNavItems = [].slice.call(
+        document.querySelectorAll('#navbarResponsive .nav-link')
+    );
+    responsiveNavItems.map(function(responsiveNavItem) {
+        responsiveNavItem.addEventListener('click', () => {
+            if (window.getComputedStyle(navbarToggler).display !== 'none') {
+                navbarToggler.click();
+            }
+        });
+    });
+
+});
+</script>
+<!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
+<!-- MDB Ends -->
+
+</html>

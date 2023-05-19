@@ -1,0 +1,39 @@
+/* Login.html */
+.login-card {
+    margin-top: 10%;
+}
+
+
+/*  */
+
+
+/* logout.html */
+.logout-card {
+    margin-top: 10%;
+}
+
+
+/*  */
+
+
+.loading-spinner {
+    text-align: center;
+    margin: auto;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    background: rgba(236, 230, 230, 0.8) !important;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-spinner-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

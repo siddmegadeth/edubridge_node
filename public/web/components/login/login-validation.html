@@ -1,0 +1,19 @@
+<div class="modal fade" tabindex="-1" id="otpValidateModal" tabindex="-1" aria-labelledby="otpValidateLabel" aria-hidden="true" data-mdb-backdrop="static" data-mdb-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="otpValidationForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="otpValidateLabel">{{'LOGIN_PAGE.OTP_MODAL.VALIDATE_OTP_HEADER'|translate}}</h5>
+                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close" ng-click="hideOTPValidationModal()"></button>
+                </div>
+                <div class="modal-body">
+                    <input class="form-control" ng-model="otpNumber" name="otpNumber" limit-to="6" ng-required="true" ng-minlength="6" ng-maxlength="6" maxlength="6"  pattern="\d*" type="number" validation="required|digits:6|max_len:6" placeholder="Input 6 Digit OTP" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal"ng-click="hideOTPValidationModal()">{{'CLOSE'|translate}}</button>
+                    <button type="button" class="btn btn-primary" ng-disabled="otpValidationForm.$invalid" ng-click="validateOTP(otpNumber)">{{'LOGIN_PAGE.OTP_MODAL.OTP_BUTTON'|translate}} </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
