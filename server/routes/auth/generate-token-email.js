@@ -1,7 +1,7 @@
 (function() {
 
-    app.get('/get/generate/token/from/email', function(req, resp) {
-        log('/get/generate/token/from/email');
+    app.post('/post/generate/token/from/email', function(req, resp) {
+        log('/post/generate/token/from/email');
         email = req.body.email || req.params.email || req.query.email;
         log(email);
         ProfileModel.findOne({ email: email }, function(err, found) {

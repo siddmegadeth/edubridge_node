@@ -42,7 +42,7 @@ app.provider('authentication', [function() {
                 generateTokenFromEmail: function(email) {
 
                     return $http({
-                        method: 'GET',
+                        method: 'POST',
                         url: authenticationURL.generateTokenFromEmail,
                         params: {
                             email: email

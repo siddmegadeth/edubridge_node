@@ -60,7 +60,7 @@ app.config(['$locationProvider', '$httpProvider', '$routeProvider', '$translateP
 
     var apiURI = {
         authentication: {
-            generateTokenFromEmail: productionLink + '/get/generate/token/from/email',
+            generateTokenFromEmail: productionLink + '/post/generate/token/from/email',
             createProfile: productionLink + '/post/create/profile',
             verifyAccessToken: productionLink + '/get/verify/access/token',
             updateMobileNumber: productionLink + "/get/auth/validate/otp/update/mobile"

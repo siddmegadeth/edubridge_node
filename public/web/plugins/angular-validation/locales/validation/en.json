@@ -1,4 +1,5 @@
 {
+    "INVALID_EMAIL": "Email Not Valid",
     "INVALID_REQUIRED": "",
     "INVALID_NUMERIC": "Only Numbers Are Supported",
     "INVALID_MIN_CHAR": " Minimum Character Required.",
@@ -10,10 +11,12 @@
     "INVALID_DIGITS": "Only Digits Between 0 to 9.",
     "TITLE": "Edubridge",
     "CLOSE": "Close",
-    "UTILITIES": {
+    "UTILITIES":
+    {
         "LOADING_MESSAGE": "Loading"
     },
-    "NAVIGATION": {
+    "NAVIGATION":
+    {
         "HOME": "Home",
         "LOGIN": "Login",
         "SEARCH": "Search",
@@ -21,18 +24,22 @@
         "SIGN_IN": "Sign In",
         "MARKET_PLACE": "MarketPlace"
     },
-    "LOGOUT_PAGE": {
+    "LOGOUT_PAGE":
+    {
         "LOGOUT_MESSAGE": "You Had Been Logged Out"
     },
-    "LOGIN_PAGE": {
+    "LOGIN_PAGE":
+    {
         "LOGIN_MESSAGE": "Login/Sign-up using Mobile Number",
-        "OTP_MODAL": {
+        "OTP_MODAL":
+        {
             "VALIDATE_OTP_HEADER": "Validate OTP And Sign In",
             "OTP_MESSAGE": "Input 6 Digit OTP To Continue. Please check SMS and WA for OTP",
             "OTP_BUTTON": "Validate"
         }
     },
-    "FOOTER_PAGE": {
+    "FOOTER_PAGE":
+    {
         "AUTHOR": "Siddharth Chandra",
         "COPYRIGHT": "© 2023 Copyright:"
     }
