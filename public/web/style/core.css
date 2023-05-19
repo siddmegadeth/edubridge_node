@@ -48,3 +48,7 @@ input[type=number] {
 a {
     text-decoration: none !important;
 }
+
+.active {
+    font-weight: bold;
+}
