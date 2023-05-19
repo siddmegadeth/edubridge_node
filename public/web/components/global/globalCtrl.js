@@ -2,7 +2,7 @@ app.controller('globalCtrl', ['$scope', '$rootScope', '$location', '$timeout', '
 
 
     $timeout(function() {
-       
+       $scope.profile = stateManager.getProfile();
         $location.path('/verify');
     })
 

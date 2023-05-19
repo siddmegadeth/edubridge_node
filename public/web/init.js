@@ -30,7 +30,7 @@ warn('Detected OS Type Advance :');
 log(osTypeAdvance);
 
 
-app.config(['$locationProvider', '$httpProvider', '$routeProvider', '$translateProvider', 'productionModeProvider', 'authenticationProvider', 'stateManagerProvider', 'profileProvider', function($locationProvider, $httpProvider, $routeProvider, $translateProvider, productionModeProvider, authenticationProvider, stateManagerProvider, profileProvider) {
+app.config(['$locationProvider', '$httpProvider', '$routeProvider', '$translateProvider', 'productionModeProvider', 'authenticationProvider', 'stateManagerProvider', 'profileProvider','trainerProvider','courseProvider', function($locationProvider, $httpProvider, $routeProvider, $translateProvider, productionModeProvider, authenticationProvider, stateManagerProvider, profileProvider,trainerProvider,courseProvider) {
 
     $locationProvider.html5Mode(true);
     $locationProvider.html5Mode({
@@ -70,13 +70,20 @@ app.config(['$locationProvider', '$httpProvider', '$routeProvider', '$translateP
         },
         stateManager: {
             verifyAccessToken: productionLink + '/get/verify/access/token'
+        },
+        course: {
+
+        },
+        trainer: {
+
         }
     };
     log(apiURI.authentication);
     authenticationProvider.config(apiURI.authentication)
     stateManagerProvider.config(apiURI.authentication);
     profileProvider.config(apiURI.profile);
-
+    trainerProvider.config(apiURI.trainer);
+    courseProvider.config(apiURI.course);
     $routeProvider
         .when('/home', {
             templateUrl: 'components/home/home.html',
@@ -90,7 +97,7 @@ app.config(['$locationProvider', '$httpProvider', '$routeProvider', '$translateP
             }
         })
 
-    .when('/profile/complete', {
+        .when('/profile/complete', {
             templateUrl: 'components/complete-profile/complete-profile.html',
             controller: 'completeProfileCtrl',
             params: {

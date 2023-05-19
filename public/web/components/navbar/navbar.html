@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" ng-if="globalSettings.showNavBar">
+<nav class="navbar navbar-expand-lg  sticky-top" ng-if="globalSettings.showNavBar">
     <!-- Container wrapper -->
     <div class="container">
         <!-- Navbar brand -->
@@ -18,7 +18,7 @@
                     <a class="nav-link" href="#/home" ng-class="{ active: isActive('/home')}" ng-if="!globalSettings.hideCredentialsLink" ng-show="!globalSettings.disableLink">{{'NAVIGATION.HOME'|translate}}</a>
                 </li>
             </ul>
-            <!-- Left links -->
+            <!-- right links -->
             <div class="d-flex align-items-center">
                 <a class="btn btn-primary px-3 me-2" href="#/login" ng-class="{ active: isActive('/login')}" ng-if="globalSettings.hideCredentialsLink">
                     {{'NAVIGATION.SIGN_IN'|translate}}
