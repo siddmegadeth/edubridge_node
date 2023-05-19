@@ -30,7 +30,7 @@ warn('Detected OS Type Advance :');
 log(osTypeAdvance);
 
 
-app.config(['$locationProvider', '$httpProvider', '$routeProvider', '$translateProvider', 'productionModeProvider', 'authenticationProvider', 'stateManagerProvider', 'profileProvider','trainerProvider','courseProvider', function($locationProvider, $httpProvider, $routeProvider, $translateProvider, productionModeProvider, authenticationProvider, stateManagerProvider, profileProvider,trainerProvider,courseProvider) {
+app.config(['$locationProvider', '$httpProvider', '$routeProvider', '$translateProvider', 'productionModeProvider', 'authenticationProvider', 'stateManagerProvider', 'profileProvider', 'trainerProvider', 'courseProvider', function($locationProvider, $httpProvider, $routeProvider, $translateProvider, productionModeProvider, authenticationProvider, stateManagerProvider, profileProvider, trainerProvider, courseProvider) {
 
     $locationProvider.html5Mode(true);
     $locationProvider.html5Mode({
@@ -72,13 +72,21 @@ app.config(['$locationProvider', '$httpProvider', '$routeProvider', '$translateP
             verifyAccessToken: productionLink + '/get/verify/access/token'
         },
         course: {
-
+            getAllCourse: productionLink + '/get/all/course',
+            getCourseById: productionLink + '/get/existing/course/by/id',
+            createNewCourse: productionLink + '/post/create/new/course',
+            updateCourseById: productionLink + '/put/update/existing/course/by/id',
+            deleteCourseById: productionLink + '/delete/course/by/id'
         },
         trainer: {
-
+            getAllTrainer: productionLink + '/get/all/trainer',
+            getTrainerById: productionLink + '/get/existing/trainer/by/id',
+            createNewTrainer: productionLink + '/post/create/new/trainer',
+            updateTrainerById: productionLink + '/put/update/existing/trainer/by/id',
+            deleteTrainerById: productionLink + '/delete/trainer/by/id'
         }
     };
-    log(apiURI.authentication);
+    log(apiURI);
     authenticationProvider.config(apiURI.authentication)
     stateManagerProvider.config(apiURI.authentication);
     profileProvider.config(apiURI.profile);

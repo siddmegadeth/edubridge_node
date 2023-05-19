@@ -9,12 +9,53 @@ app.provider('trainer', [function() {
         $get: ['$http', function($http) {
 
             return {
-                createProfile: function(profile) {
+                getAllTrainer: function(profile, trainer) {
+                    return $http({
+                        method: 'GET',
+                        url: trainerURL.getAllTrainer,
+                        params: {
+                            profile: profile,
+                            trainer: trainer
+                        }
+                    })
+                },
+                getTrainerById: function(profile, trainer) {
+                    return $http({
+                        method: 'GET',
+                        url: trainerURL.getTrainerById,
+                        params: {
+                            profile: profile,
+                            trainer: trainer
+                        }
+                    })
+                },
+                createNewTrainer: function(profile, trainer) {
                     return $http({
                         method: 'POST',
-                        url: profileURL.createProfile,
+                        url: trainerURL.createNewTrainer,
                         params: {
-                            profile: profile
+                            profile: profile,
+                            trainer: trainer
+                        }
+                    })
+                },
+                updateTrainerById: function(profile, trainer) {
+                    return $http({
+                        method: 'PUT',
+                        url: trainerURL.updateTrainerById,
+                        params: {
+                            profile: profile,
+                            trainer: trainer
+                        }
+                    })
+                },
+                deleteTrainerById: function(profile, trainer) {
+                    return $http({
+                        method: 'DELETE',
+                        url: trainerURL.deleteTrainerById,
+                        params: {
+                            profile: profile,
+                            trainer: trainer
                         }
                     })
                 }
