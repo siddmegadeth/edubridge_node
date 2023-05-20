@@ -11,4 +11,6 @@
 ##  open browser with localhost:PORT and check out trainer API
 ##  On Successfully opening the Page the user would be redirected towards login. Input any dummy Email And Continue
 
+## Or use Tags to use stable version
+
 # NOTE Only Trainer API is implemented with JWT Auth,Cookie Based And LocalStorage Based Token
