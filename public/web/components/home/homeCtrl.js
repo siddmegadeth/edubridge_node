@@ -54,6 +54,12 @@ app.controller('homeCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'co
             });
     };
 
+
+    $scope.updateTrainerById = function(tuple) {
+        warn("updateTrainerById");
+        log(tuple);
+    }
+
     $scope.addCourse = function(tuple) {
         warn('Add addCourse ');
         log(tuple);

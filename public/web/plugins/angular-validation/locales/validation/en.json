@@ -57,11 +57,12 @@
         "BUTTON_SAVE": "Save And Continue",
         "COMPLETE_PROFILE": "Complete Your Profile",
         "BUTTON_ADD": "Add And Continue",
-        "CREATED_AT" : "Created At",
-        "NO_RESULT_FOUND" : "No Result Found",
-        "ACTION" : "Action",
+        "CREATED_AT": "Created At",
+        "NO_RESULT_FOUND": "No Result Found",
+        "ACTION": "Action",
         "ACTION_DELETE": "Delete",
-        "ACTION_VIEW": "View"
+        "ACTION_VIEW": "View",
+        "ACTION_MODIFY": "Modify"
     },
     "FOOTER_PAGE":
     {

@@ -56,7 +56,13 @@
         "MOBILE": "Mobile",
         "BUTTON_SAVE": "Save And Continue",
         "COMPLETE_PROFILE": "Complete Your Profile",
-        "BUTTON_ADD": "Add And Continue"
+        "BUTTON_ADD": "Add And Continue",
+        "CREATED_AT": "यहाँ बनाया गया",
+        "NO_RESULT_FOUND": "कोई परिणाम नहीं मिला",
+        "ACTION": "क्रिया",
+        "ACTION_DELETE": "मिटाना",
+        "ACTION_VIEW": "देखना",
+        "ACTION_MODIFY": "सुधारना"
     },
     "FOOTER_PAGE":
     {

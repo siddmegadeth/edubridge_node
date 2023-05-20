@@ -21,6 +21,7 @@
                     <th>{{'FORMS.EMAIL'|translate}}</th>
                     <th>{{'FORMS.MOBILE'|translate}}</th>
                     <th>{{'FORMS.ACTION'|translate}}</th>
+                    <th>{{'FORMS.ACTION'|translate}}</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +33,9 @@
                     <td>{{train.mobile}}</td>
                     <td>
                         <button class="btn btn-danger" ng-click="deleteTrainerById(train)">{{'FORMS.ACTION_DELETE'|translate}}</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-warning" ng-click="updateTrainerById(train)">{{'FORMS.ACTION_MODIFY'|translate}}</button>
                     </td>
                 </tr>
             </tbody>

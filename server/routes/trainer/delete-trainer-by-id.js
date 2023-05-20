@@ -1,6 +1,6 @@
 (function() {
 
-    
+
 
     async function deleteTrainerById(profile, trainerId) {
 
