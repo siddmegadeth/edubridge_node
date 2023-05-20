@@ -14,3 +14,5 @@
 ## Or use Tags to use stable version
 
 # NOTE Only Trainer API is implemented with JWT Auth,Cookie Based And LocalStorage Based Token
+
+![edubridge](https://github.com/siddmegadeth/edubridge_node/assets/5025324/734d713a-c9ea-4962-9e31-c90937e63054)
