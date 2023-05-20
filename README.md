@@ -33,6 +33,8 @@ Or use Tags to use stable version
 NOTE Only Trainer API is implemented with JWT Auth,Cookie Based And LocalStorage Based Token
 
 
+
+
 ## Usage (.env file content)
 
 ```python
@@ -42,6 +44,13 @@ MONGODB_URI_PRODUCTION=
 MONGODB_URL_PRODUCTION=
 ACCESSTOKEN_SECRET=edubridge
 ```
+
+Open Below In Browser
+
+```python
+http://localhost:<PORT-NUMBER>/index.html
+```
+
 # Screenshot (Trainer API and UI)
 ![edubridge](https://github.com/siddmegadeth/edubridge_node/assets/5025324/734d713a-c9ea-4962-9e31-c90937e63054)
 
