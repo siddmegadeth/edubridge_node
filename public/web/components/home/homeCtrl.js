@@ -41,6 +41,17 @@ app.controller('homeCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'co
     $scope.deleteTrainerById = function(tuple) {
         warn("deleteTrainerById");
         log(tuple);
+        trainer.deleteTrainerById($scope.profile.profile, tuple._id)
+            .then(function(resp) {
+                warn('Delete Trainer By Id : ');
+                log(resp);
+                if (resp.data.status && resp.data.isTrainerDeleted) {
+                    toastr.success('Trainer', resp.data.message);
+                    $scope.allTrainers = resp.data.data.trainers;
+                } else {
+                    toastr.warning('Trainer', resp.data.message);
+                }
+            });
     };
 
     $scope.addCourse = function(tuple) {

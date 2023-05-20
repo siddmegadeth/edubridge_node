@@ -49,13 +49,13 @@ app.provider('trainer', [function() {
                         }
                     })
                 },
-                deleteTrainerById: function(profile, trainer) {
+                deleteTrainerById: function(profile, trainerId) {
                     return $http({
                         method: 'DELETE',
                         url: trainerURL.deleteTrainerById,
                         params: {
                             profile: profile,
-                            trainer: trainer
+                            trainerId: trainerId
                         }
                     })
                 }
