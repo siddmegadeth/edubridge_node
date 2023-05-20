@@ -24,6 +24,12 @@
                 index: true,
                 sparse: true
             },
+            mobile: {
+                type: String,
+                unique: true,
+                index: true,
+                sparse: true
+            },
             created_at: {
                 type: Date,
                 default: Date.now

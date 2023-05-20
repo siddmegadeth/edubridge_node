@@ -38,6 +38,26 @@
             "OTP_BUTTON": "Validate"
         }
     },
+    "HOME_PAGE":
+    {
+        "ADD_COURSE": "Add Course",
+        "ADD_TRAINER": "Add Trainer"
+    },
+    "FORMS":
+    {
+        "COURSE_ID": "Course Id",
+        "COURSE_TYPE": "Course Type",
+        "DESCRIPTION": "Description",
+        "HEADING": "Heading",
+        "TRAINER_ID": "Trainer Id",
+        "FULLNAME": "Fullname",
+        "EMAIL": "Email",
+        "USERNAME": "Username",
+        "MOBILE" : "Mobile",
+        "BUTTON_SAVE" :"Save And Continue",
+        "COMPLETE_PROFILE" : "Complete Your Profile",
+        "BUTTON_ADD" : "Add And Continue"
+    },
     "FOOTER_PAGE":
     {
         "AUTHOR": "Siddharth Chandra",

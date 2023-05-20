@@ -1,14 +1,13 @@
 <div ng-include="'components/home/modals/add-course.html'"></div>
 <div ng-include="'components/home/modals/add-trainer.html'"></div>
-
 <div class="container">
     <div class="jumbotron">
         <uib-tabset active="activeForm">
             <uib-tab index="1" heading="Trainer">
-                <div ng-include="'components/home/trainer.html'"></div>
+                <div ng-include="'components/home/templates/trainer.html'"></div>
             </uib-tab>
             <uib-tab index="2" heading="Courses">
-                <div ng-include="'components/home/course.html'"></div>
+                <div ng-include="'components/home/templates/course.html'"></div>
             </uib-tab>
         </uib-tabset>
     </div>

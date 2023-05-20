@@ -1,7 +1,7 @@
 <div class="containe padding-topr">
     <div class="row padding-top">
         <div class="col-lg-3 col-sm-3 no-pad-margin">
-            <button class="btn btn-primary " ng-click="showCourse()">Add Course&nbsp;
+            <button class="btn btn-primary " ng-click="openCourseModal()">{{'HOME_PAGE.ADD_COURSE'|translate}}&nbsp;
                 <i class="fas fa-plus"></i>
             </button>
         </div>
@@ -10,9 +10,10 @@
         <table class="table table-condensed table-hover table-striped">
             <thead>
                 <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
+                    <th>{{'FORMS.COURSE_ID'|translate}}</th>
+                    <th>{{'FORMS.COURSE_TYPE'|translate}}</th>
+                    <th>{{'FORMS.HEADING'|translate}}</th>
+                    <th>{{'FORMS.DESCRIPTION'|translate}}</th>
                 </tr>
             </thead>
             <tbody>
