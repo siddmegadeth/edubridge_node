@@ -12,8 +12,8 @@
                 {{'FORMS.NO_RESULT_FOUND'|translate}}
             </h3>
         </div>
-        <div ng-if="allTrainers.length!=0" class="text-center margin-top ">
-            <input type="search" class="form-control" ng-model="searchTrainer" placeholder="Search Trainer" />
+        <div ng-if="allTrainers.length!=0" class="text-center margin-top">
+            <input type="search" class="form-control" ng-model="searchTrainerList" placeholder="Search Trainer" />
         </div>
         <table class="table table-condensed table-hover table-striped" ng-if="allTrainers.length!=0">
             <thead>
@@ -28,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="train in allTrainers|orderBy :sortBy |filter:searchTrainer track by $index">
+                <tr ng-repeat="train in allTrainers|filter:searchTrainerList|orderBy:sortBy track by $index">
                     <td>{{$index+1}}</td>
                     <td>{{train._id}}</td>
                     <td>{{train.fullname}}</td>
