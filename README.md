@@ -3,6 +3,7 @@
 ## Clone or zip download from github
 ##  unzip
 ##  npm install
+##  install npm dotenv npm seperately and create .env file
 ##  add mongoDB URL from Mongo Atlas (Free Tier) in ENV File
 ##  Add Secret Token in ENV File
 ##  Add Mongo Db Name inENV File with Mongo URI
