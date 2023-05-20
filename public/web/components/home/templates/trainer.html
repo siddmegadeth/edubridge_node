@@ -1,7 +1,7 @@
 <div class="containe padding-topr">
     <div class="row padding-top">
         <div class="col-lg-3 col-sm-3 no-pad-margin">
-            <button class="btn btn-primary " ng-click="openTrainerModal()">{{'HOME_PAGE.ADD_TRAINER'|translate}}&nbsp;
+            <button class="btn btn-primary " ng-click="openTrainerModal(false)">{{'HOME_PAGE.ADD_TRAINER'|translate}}&nbsp;
                 <i class="fas fa-plus"></i>
             </button>
         </div>
@@ -12,30 +12,33 @@
                 {{'FORMS.NO_RESULT_FOUND'|translate}}
             </h3>
         </div>
+        <div ng-if="allTrainers.length!=0" class="text-center margin-top ">
+            <input type="search" class="form-control" ng-model="searchTrainer" placeholder="Search Trainer" />
+        </div>
         <table class="table table-condensed table-hover table-striped" ng-if="allTrainers.length!=0">
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>{{'FORMS.TRAINER_ID'|translate}}</th>
-                    <th>{{'FORMS.FULLNAME'|translate}}</th>
-                    <th>{{'FORMS.EMAIL'|translate}}</th>
-                    <th>{{'FORMS.MOBILE'|translate}}</th>
+                    <th><a href ng-click="sortTrainerBy('_id')">{{'FORMS.TRAINER_ID'|translate}}</a></th>
+                    <th><a href ng-click="sortTrainerBy('fullname')">{{'FORMS.FULLNAME'|translate}}</a></th>
+                    <th><a href ng-click="sortTrainerBy('email')">{{'FORMS.EMAIL'|translate}}</a></th>
+                    <th><a href ng-click="sortTrainerBy('mobile')">{{'FORMS.MOBILE'|translate}}</a></th>
                     <th>{{'FORMS.ACTION'|translate}}</th>
                     <th>{{'FORMS.ACTION'|translate}}</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="train in allTrainers track by $index">
-                    <td>{{$index}}</td>
+                <tr ng-repeat="train in allTrainers|orderBy :sortBy |filter:searchTrainer track by $index">
+                    <td>{{$index+1}}</td>
                     <td>{{train._id}}</td>
                     <td>{{train.fullname}}</td>
-                    <td>{{train.email}}</td>
-                    <td>{{train.mobile}}</td>
+                    <td><a href>{{train.email}}</a></td>
+                    <td><a href>{{train.mobile}}</a></td>
                     <td>
                         <button class="btn btn-danger" ng-click="deleteTrainerById(train)">{{'FORMS.ACTION_DELETE'|translate}}</button>
                     </td>
                     <td>
-                        <button class="btn btn-warning" ng-click="updateTrainerById(train)">{{'FORMS.ACTION_MODIFY'|translate}}</button>
+                        <button class="btn btn-warning" ng-click="modifyTrainer(train)">{{'FORMS.ACTION_MODIFY'|translate}}</button>
                     </td>
                 </tr>
             </tbody>

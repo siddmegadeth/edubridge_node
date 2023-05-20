@@ -3,24 +3,28 @@
         <div class="modal-content">
             <form name="trainerForm">
                 <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold">{{'HOME_PAGE.ADD_TRAINER'|translate}}</h4>
+                    <h4 class="modal-title w-100 font-weight-bold" ng-if="!isTrainerModified">{{'HOME_PAGE.ADD_TRAINER'|translate}}</h4>
+                    <h4 class="modal-title w-100 font-weight-bold" ng-if="isTrainerModified">{{'FORMS.ACTION_MODIFY'|translate}}</h4>
                 </div>
                 <div class="modal-body mx-3">
                     <div class="md-form mb-2">
                         <label data-error="wrong" data-success="right" for="fullName">{{'FORMS.FULLNAME'|translate}}</label>
-                        <input type="text" id="fullName" placeholder="Fullname" name="fullName" ng-model="trainerInstance.fullname" class="form-control validate" validation="required">
+                        <input type="text" id="fullName" placeholder="Fullname" name="fullName" ng-model="trainerInstance.fullname" class="form-control validate" validation="required" ng-disabled="isTrainerModified">
                     </div>
                     <div class="md-form mb-2">
                         <label data-error="wrong" data-success="right" for="email">{{'FORMS.EMAIL'|translate}}</label>
-                        <input type="email" id="email" placeholder="Email" name="email" ng-model="trainerInstance.email" class="form-control validate" validation="required|email">
+                        <input type="email" id="email" placeholder="Email" name="email" ng-model="trainerInstance.email" class="form-control validate" validation="required|email" ng-disabled="isTrainerModified">
                     </div>
                     <div class="md-form mb-2">
                         <label data-error="wrong" data-success="right" for="mobile">{{'FORMS.MOBILE'|translate}}</label>
-                        <input type="number" id="mobile" placeholder="Mobile" name="mobile" ng-model="trainerInstance.mobile" class="form-control validate" validation="required">
+                        <input type="text" id="mobile" placeholder="Mobile" name="mobile" ng-model="trainerInstance.mobile" class="form-control validate" validation="required|len:10">
                     </div>
                 </div>
-                <div class="modal-footer d-flex justify-content-center">
+                <div class="modal-footer d-flex justify-content-center" ng-if="!isTrainerModified">
                     <button class="btn btn-primary" ng-click="addTrainer(trainerInstance)" ng-disabled="trainerForm.$invalid">{{'FORMS.BUTTON_ADD'|translate}}</button>
+                </div>
+                <div class="modal-footer d-flex justify-content-center" ng-if="isTrainerModified">
+                    <button class="btn btn-primary" ng-click="updateTrainerById(trainerInstance)" ng-disabled="trainerForm.$invalid">{{'FORMS.ACTION_MODIFY'|translate}}</button>
                 </div>
             </form>
         </div>

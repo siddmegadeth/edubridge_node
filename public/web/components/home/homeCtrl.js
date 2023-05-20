@@ -3,6 +3,7 @@ app.controller('homeCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'co
 
     $timeout(function() {
         $scope.profile = stateManager.getProfile();
+        $scope.sortBy = 'mobile';
         $scope.fetchTrainers();
     });
 
@@ -19,7 +20,6 @@ app.controller('homeCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'co
                     toastr.warning('Trainer', resp.data.message);
                 }
             });
-
     }
 
     $scope.addTrainer = function(tuple) {
@@ -58,13 +58,37 @@ app.controller('homeCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'co
     $scope.updateTrainerById = function(tuple) {
         warn("updateTrainerById");
         log(tuple);
+        trainer.updateTrainerById($scope.profile.profile, tuple)
+            .then(function(resp) {
+                warn('Delete Trainer By Id : ');
+                log(resp);
+                if (resp.data.status && resp.data.isTrainerUpdated) {
+                    toastr.success('Trainer', resp.data.message);
+                    $scope.allTrainers = resp.data.data.trainers;
+                } else {
+                    toastr.warning('Trainer', resp.data.message);
+                }
+            });
+
     }
+
+    $scope.modifyTrainer = function(tuple) {
+        warn("modifyTrainer");
+        log(tuple);
+        $scope.trainerInstance = tuple;
+        $scope.openTrainerModal(true);
+
+
+    };
+
+    $scope.sortTrainerBy = function(sortBy) {
+        $scope.sortBy = sortBy;
+    }
+
 
     $scope.addCourse = function(tuple) {
         warn('Add addCourse ');
         log(tuple);
-
-
     };
 
     $scope.openCourseModal = function() {
@@ -73,7 +97,8 @@ app.controller('homeCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'co
         $scope.courseModal.modal('show');
     }
 
-    $scope.openTrainerModal = function() {
+    $scope.openTrainerModal = function(value) {
+        $scope.isTrainerModified = value;
         $scope.trainerModal = angular.element("#trainerModal");
         $scope.trainerModal.modal('show');
     }
