@@ -6,7 +6,7 @@
         profile: {
             type: String,
             unique: true,
-            index: true,
+            index: true
         },
         trainers: [{
             trainerId: {
@@ -46,19 +46,20 @@
     });
 
 
-    // TrainerSchema.pre('save', function(next) {
-    //     now = new Date();
-    //     this.updated_at = now;
-    //     if (!this.created_at) {
-    //         this.created_at = now
-    //     }
+    TrainerSchema.pre('save', function(next) {
+        now = new Date();
+        this.updated_at = now;
+        if (!this.created_at) {
+            this.created_at = now
+        }
 
-    //     log("System generated Global Unique ID (TrainerID) :" + this._id);
-    //     this.trainerId = this._id;;
-    //     log(this.trainerId);
+        log("System generated Global Unique ID (TrainerID) :" + this._id);
+        this.trainers.trainerId = this._id;
+        log("Assigning Some ID");
+        log(this.trainers.trainerId);
 
-    //     next();
-    // });
+        next();
+    });
 
 
     TrainerModel = module.exports = mongoose.model("TrainerModel", TrainerSchema);

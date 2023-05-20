@@ -22,16 +22,16 @@ app.controller('loginCtrl', ['$scope', '$rootScope', '$timeout', 'authentication
                 warn('Generate OTP Response :');
                 log(resp);
                 if (resp.data.status && resp.data.isAuthenticated) {
-                    toastr.success('Sign In', 'Successfully Sent OTP');
+                    toastr.success('Sign In', 'Success');
 
                     stateManager.saveProfile(resp.data.profile);
                     stateManager.saveAccessToken(resp.data.access_token);
-                    toastr.success('Sign In', 'Verified OTP.Success');
+                    toastr.success('Sign In', 'Verified Emails');
                     $route.reload();
                     $location.path("/home");
                 } else {
                     warn('OTP Not Generated');
-                    toastr.warning('Sign In', 'OTP Not Found');
+                    toastr.warning('Sign In', 'Email Not Found');
 
                 }
             });

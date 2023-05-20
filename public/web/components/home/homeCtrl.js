@@ -1,17 +1,24 @@
-app.controller('homeCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'course', 'trainer', function($scope, $rootScope, $location, $timeout, course, trainer) {
+app.controller('homeCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'course', 'trainer', 'stateManager','toastr', function($scope, $rootScope, $location, $timeout, course, trainer, stateManager,toastr) {
 
 
     $timeout(function() {
-
-
-
-
+        $scope.profile = stateManager.getProfile();
 
     });
 
     $scope.addTrainer = function(tuple) {
-        warn('Add Trainer ');
+        warn('Add addTrainer ');
         log(tuple);
+        trainer.createNewTrainer($scope.profile.profile, tuple)
+            .then(function(resp) {
+                warn('Response From Add Trainer :');
+                log(resp);
+                if (resp.data.status && resp.data.isTrainerAdded) {
+                    toastr.success('Trainer', resp.data.message);
+                } else {
+                    toastr.warning('Trainer', resp.data.message);
+                }
+            });
     };
 
     $scope.addCourse = function(tuple) {

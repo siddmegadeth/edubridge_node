@@ -1,26 +1,26 @@
 {
-    "INVALID_EMAIL": "Email Not Valid",
-    "INVALID_REQUIRED": "Required",
-    "INVALID_NUMERIC": "Only Numbers Are Supported",
-    "INVALID_MIN_CHAR": " Minimum Character Required.",
-    "INVALID_MAX_CHAR": " Exceed Character Limit.",
-    "INVALID_BETWEEN_NUM": "Number Must Be Between 1 to 100.",
-    "VALID_EXACT_LEN": "OTP Is 6 Digit.",
-    "INVALID_EXACT_LEN": "Invalid.",
-    "VALID_DIGITS": "Only Digits Between 0 to 9.",
-    "INVALID_DIGITS": "Only Digits Between 0 to 9.",
+    "INVALID_EMAIL": "ईमेल मान्य नहीं है",
+    "INVALID_REQUIRED": "आवश्यक",
+    "INVALID_NUMERIC": "केवल संख्याएँ समर्थित हैं",
+    "INVALID_MIN_CHAR": " न्यूनतम चरित्र की आवश्यकता है।",
+    "INVALID_MAX_CHAR": " वर्ण सीमा से अधिक.",
+    "INVALID_BETWEEN_NUM": "संख्या 1 से 100 के बीच होनी चाहिए।",
+    "VALID_EXACT_LEN": "ओटीपी 6 अंकों का होता है।",
+    "INVALID_EXACT_LEN": "अमान्य।",
+    "VALID_DIGITS": "केवल अंक 0 से 9 के बीच।",
+    "INVALID_DIGITS": "केवल अंक 0 से 9 के बीच।",
     "TITLE": "Edubridge",
-    "CLOSE": "Close",
+    "CLOSE": "बंद करना",
     "UTILITIES":
     {
-        "LOADING_MESSAGE": "Loading"
+        "LOADING_MESSAGE": "लोड"
     },
     "NAVIGATION":
     {
-        "HOME": "Home",
-        "LOGIN": "Login",
-        "SEARCH": "Search",
-        "LOGOUT": "Logout",
+        "HOME": "घर",
+        "LOGIN": "लॉगिन",
+        "SEARCH": "ढूँढ",
+        "LOGOUT": "लॉगआउट",
         "SIGN_IN": "Sign In",
         "MARKET_PLACE": "MarketPlace"
     },
