@@ -1,6 +1,6 @@
 {
     "INVALID_EMAIL": "Email Not Valid",
-    "INVALID_REQUIRED": "",
+    "INVALID_REQUIRED": "Required",
     "INVALID_NUMERIC": "Only Numbers Are Supported",
     "INVALID_MIN_CHAR": " Minimum Character Required.",
     "INVALID_MAX_CHAR": " Exceed Character Limit.",
