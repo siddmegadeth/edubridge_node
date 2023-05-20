@@ -8,12 +8,8 @@ app.controller('loginCtrl', ['$scope', '$rootScope', '$timeout', 'authentication
             $window.history.back();
         } else {
             //$scope.initPhone();
-
         }
-
     });
-
-
 
     $scope.signIn = function(email) {
         log(email);

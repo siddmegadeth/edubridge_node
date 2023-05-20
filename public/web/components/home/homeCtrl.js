@@ -1,10 +1,26 @@
-app.controller('homeCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'course', 'trainer', 'stateManager','toastr', function($scope, $rootScope, $location, $timeout, course, trainer, stateManager,toastr) {
+app.controller('homeCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'course', 'trainer', 'stateManager', 'toastr', function($scope, $rootScope, $location, $timeout, course, trainer, stateManager, toastr) {
 
 
     $timeout(function() {
         $scope.profile = stateManager.getProfile();
-
+        $scope.fetchTrainers();
     });
+
+
+    $scope.fetchTrainers = function() {
+        trainer.getAllTrainer($scope.profile.profile)
+            .then(function(resp) {
+                warn('Response From Find All Trainer :');
+                log(resp);
+                if (resp.data.status && resp.data.isTrainerFound) {
+                    toastr.success('Trainer', resp.data.message);
+                    $scope.allTrainers = resp.data.data.trainers;
+                } else {
+                    toastr.warning('Trainer', resp.data.message);
+                }
+            });
+
+    }
 
     $scope.addTrainer = function(tuple) {
         warn('Add addTrainer ');
@@ -15,10 +31,16 @@ app.controller('homeCtrl', ['$scope', '$rootScope', '$location', '$timeout', 'co
                 log(resp);
                 if (resp.data.status && resp.data.isTrainerAdded) {
                     toastr.success('Trainer', resp.data.message);
+                    $scope.allTrainers = resp.data.data.trainers;
                 } else {
                     toastr.warning('Trainer', resp.data.message);
                 }
             });
+    };
+
+    $scope.deleteTrainerById = function(tuple) {
+        warn("deleteTrainerById");
+        log(tuple);
     };
 
     $scope.addCourse = function(tuple) {

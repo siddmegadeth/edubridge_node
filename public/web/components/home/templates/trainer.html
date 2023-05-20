@@ -7,31 +7,32 @@
         </div>
     </div>
     <div class="row">
-        <table class="table table-condensed table-hover table-striped">
+        <div ng-if="allTrainers.length==0">
+            <h3>
+                {{'FORMS.NO_RESULT_FOUND'|translate}}
+            </h3>
+        </div>
+        <table class="table table-condensed table-hover table-striped" ng-if="allTrainers.length!=0">
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>{{'FORMS.TRAINER_ID'|translate}}</th>
                     <th>{{'FORMS.FULLNAME'|translate}}</th>
                     <th>{{'FORMS.EMAIL'|translate}}</th>
                     <th>{{'FORMS.MOBILE'|translate}}</th>
+                    <th>{{'FORMS.ACTION'|translate}}</th>
                 </tr>
-            </thead>
             </thead>
             <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
+                <tr ng-repeat="train in allTrainers track by $index">
+                    <td>{{$index}}</td>
+                    <td>{{train._id}}</td>
+                    <td>{{train.fullname}}</td>
+                    <td>{{train.email}}</td>
+                    <td>{{train.mobile}}</td>
+                    <td>
+                        <button class="btn btn-danger" ng-click="deleteTrainerById(train)">{{'FORMS.ACTION_DELETE'|translate}}</button>
+                    </td>
                 </tr>
             </tbody>
         </table>

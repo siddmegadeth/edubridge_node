@@ -1,29 +1,45 @@
 (function() {
 
 
-    async function addTrainer(profile, trainer) {
+    async function createTrainer(profile, trainer) {
 
         return new Promise(function(approve, reject) {
-            TrainerModel.findOne({
-                $and: [
-                    { profile: profile },
-                    { "trainers.email": trainer.email }
-                ]
-            }, function(errFound, found) {
+            TrainerModel.findOne({ profile: profile }, function(errFound, found) {
                 if (errFound) {
                     log("Error Occured :");
                     log(errFound);
                     reject({ status: false, message: 'Error Occured', data: errFound, isTrainerAdded: false });
                 }
                 if (found) {
-                    log("Found Trainer :");
-                    approve({ status: true, message: 'Trainer Already Exist', data: found, isTrainerAdded: false });
+                    log("Found Owner Of Trainer :");
+                    TrainerModel.findOneAndUpdate({ profile: profile, 'trainers.email': { $ne: trainer.email } }, {
+                        $addToSet: {
+                            trainers: trainer
+                        }
+                    }, { upsert: true, new: true }, function(errUpdate, updated) {
+                        if (errUpdate) {
+                            if (errUpdate.code == 11000) {
+                                approve({ status: true, message: 'Cannot Insert Duplicates Value', data: [], isTrainerAdded: false });
+                            } else {
+
+                                reject({ status: false, message: 'Error Occured', data: errUpdate, isTrainerAdded: false });
+                            }
+                        }
+
+                        if (updated) {
+                            approve({ status: true, message: 'Added New Trainer', data: updated, isTrainerAdded: true });
+                        } else {
+                            approve({ status: true, message: 'Not Able To Add New Trainer', data: [], isTrainerAdded: false });
+
+                        }
+                    });
+
                 } else {
-                    log("Not Found Trainer :");
+                    log("No  Trainer Found:");
                     var tuple = {};
                     tuple.trainers = [];
-                    tuple.trainers.push(trainer);
                     tuple.profile = profile;
+                    tuple.trainers.push(trainer);
                     var trainerTuple = new TrainerModel(tuple);
                     log(trainerTuple);
                     trainerTuple.save(function(errSave, saved) {
@@ -41,9 +57,7 @@
                         }
                     });
 
-
                 }
-
             });
         })
     }
@@ -57,7 +71,7 @@
         log("Profile : " + profile);
         if (profile && trainer) {
             var promise = [];
-            promise.push(addTrainer(profile, trainer));
+            promise.push(createTrainer(profile, trainer));
             Promise.all(promise)
                 .then(function(promiseSuccess) {
                     resp.send(promiseSuccess[0]);

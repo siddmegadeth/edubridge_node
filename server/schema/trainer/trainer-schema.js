@@ -29,10 +29,6 @@
                 unique: true,
                 index: true,
                 sparse: true
-            },
-            created_at: {
-                type: Date,
-                default: Date.now
             }
         }],
         created_at: {
@@ -54,9 +50,11 @@
         }
 
         log("System generated Global Unique ID (TrainerID) :" + this._id);
-        this.trainers.trainerId = this._id;
+        this.trainers[0].trainerId = this.trainers[0]._id;
+        log("Trainer ID generated");
+        log(this.trainers[0]);
         log("Assigning Some ID");
-        log(this.trainers.trainerId);
+        log(this.trainers[0].trainerId);
 
         next();
     });

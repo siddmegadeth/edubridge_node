@@ -9,23 +9,23 @@ app.provider('trainer', [function() {
         $get: ['$http', function($http) {
 
             return {
-                getAllTrainer: function(profile, trainer) {
+                getAllTrainer: function(profile) {
                     return $http({
                         method: 'GET',
                         url: trainerURL.getAllTrainer,
                         params: {
-                            profile: profile,
-                            trainer: trainer
+                            profile: profile
+
                         }
                     })
                 },
-                getTrainerById: function(profile, trainer) {
+                getTrainerById: function(profile, trainerId) {
                     return $http({
                         method: 'GET',
-                        url: trainerURL.getTrainerById,
+                        url: trainerURL.a,
                         params: {
                             profile: profile,
-                            trainer: trainer
+                            trainerId: trainerId
                         }
                     })
                 },
