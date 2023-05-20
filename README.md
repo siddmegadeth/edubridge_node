@@ -10,12 +10,14 @@ npm install
 
 install npm dotenv npm seperately and create .env file
 
+Create .env file in base location of directory 
+
 add mongoDB URL from Mongo Atlas (Free Tier) in ENV File
 
 Add Secret Token in ENV File
 
-
 Add Mongo Db Name inENV File with Mongo URI
+
 Add Port Number in ENV File
 
 node server to start from cmd
